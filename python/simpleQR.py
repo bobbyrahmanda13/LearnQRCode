@@ -5,8 +5,8 @@ qr = qrcode.QRCode(
     box_size=10,
     border=4,
 )
-qr.add_data('https://qr.dana.id/v1/281012012020050598122575')
+qr.add_data('https://rismaexpress.github.io/rismaexpress/')
 qr.make(fit=True)
 
-img = qr.make_image(fill_color="black", back_color="white")
-img.save('testing.png')
+img = qr.make_image(fill_color="darkblue", back_color="white")
+img.save('testingss.png')
