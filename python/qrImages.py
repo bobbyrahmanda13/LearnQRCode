@@ -42,7 +42,7 @@ qr_image = qr.make_image(
     image_factory=StyledPilImage, 
     module_drawer=RoundedModuleDrawer(), eye_drawer=RoundedModuleDrawer(), 
      # color_mask=SolidFillColorMask(back_color=(255,255,255), front_color=(0,0,200))
-    color_mask=RadialGradiantColorMask(back_color=(255,255,255), edge_color=(0,170,19), center_color=(0,0,0))
+    color_mask=RadialGradiantColorMask(back_color=(255,255,255), edge_color=(2,175,217), center_color=(0,0,0))
 )
 
 logo = Image.open("image/g.png")
