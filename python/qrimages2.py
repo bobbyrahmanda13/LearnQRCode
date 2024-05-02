@@ -29,7 +29,7 @@ from qrcode.image.styles.colormasks import SolidFillColorMask
 
 
 # Menggabungkan tautan menjadi satu teks
-combined_text = f"https://rismaexpress.github.io/rismaexpress/"
+combined_text = f"https://rismaexpress.vercel.app"
 
 # Membuat QR code
 qr = qrcode.QRCode(version=1,error_correction=qrcode.constants.ERROR_CORRECT_L,)
@@ -46,4 +46,4 @@ qr_image = qr.make_image(
 
 # logo = Image.open("image/g.png")
 # qrCodeWithImage = addLogo(qr_image, logo)
-qr_image.save("lala.png")
+qr_image.save("rismaexpress.png")
