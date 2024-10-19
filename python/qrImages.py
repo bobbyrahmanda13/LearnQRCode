@@ -32,11 +32,9 @@ def addLogo(qr_code, gambar):
 
 # Dana
 # combined_text = f"https://qr.dana.id/v1/281012012020050598122575"
-combined_text = f"https://qr.dana.id/v1/281012012020050598122575"
 
 # Gopay
-# combined_text = f'{{"qr_id":"e965f700-50a9-4222-a0ac-05de2a287f4c"}}' 
-# combined_text = f'{{"qr_id":"e965f700-50a9-4222-a0ac-05de2a287f4c"}}' 
+combined_text = f'{{"qr_id":"e965f700-50a9-4222-a0ac-05de2a287f4c"}}' 
 
 # Membuat QR code
 qr = qrcode.QRCode(
@@ -58,4 +56,5 @@ qr_image = qr.make_image(
 
 logo = Image.open("image/g.png")
 qrCodeWithImage = addLogo(qr_image, logo)
+qrCodeWithImage.save("gopay.png")
 qrCodeWithImage.save("dana.png")
