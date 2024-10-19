@@ -2,7 +2,7 @@ import qrcode
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer 
 # from qrcode.image.styles.colormasks import SolidFillColorMask
-from qrcode.image.styles.colormasks import RadialGradiantColorMask
+# from qrcode.image.styles.colormasks import RadialGradiantColorMask
 from PIL import Image
 
 # Fungsi untuk menambahkan gambar ditengah QR Code
@@ -29,11 +29,22 @@ def addLogo(qr_code, gambar):
 
 
 # Menggabungkan tautan menjadi satu teks
-# combined_text = f"https://qr.dana.id/v1/281012012020050598122575" // dana
-combined_text = f'{{"qr_id":"e965f700-50a9-4222-a0ac-05de2a287f4c"}}'
+
+# Dana
+# combined_text = f"https://qr.dana.id/v1/281012012020050598122575"
+combined_text = f"https://qr.dana.id/v1/281012012020050598122575"
+
+# Gopay
+# combined_text = f'{{"qr_id":"e965f700-50a9-4222-a0ac-05de2a287f4c"}}' 
+# combined_text = f'{{"qr_id":"e965f700-50a9-4222-a0ac-05de2a287f4c"}}' 
 
 # Membuat QR code
-qr = qrcode.QRCode(version=1,error_correction=qrcode.constants.ERROR_CORRECT_L,)
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    border = 4,
+    box_size = 10,
+)
 qr.add_data(combined_text)
 qr.make(fit=True)
 
@@ -42,9 +53,9 @@ qr_image = qr.make_image(
     image_factory=StyledPilImage, 
     module_drawer=RoundedModuleDrawer(), eye_drawer=RoundedModuleDrawer(), 
      # color_mask=SolidFillColorMask(back_color=(255,255,255), front_color=(0,0,200))
-    color_mask=RadialGradiantColorMask(back_color=(255,255,255), edge_color=(2,175,217), center_color=(0,0,0))
+    # color_mask=RadialGradiantColorMask(back_color=(255,255,255), edge_color=(2,175,217), center_color=(0,0,0))
 )
 
 logo = Image.open("image/g.png")
 qrCodeWithImage = addLogo(qr_image, logo)
-qrCodeWithImage.save("qr_code.png")
+qrCodeWithImage.save("dana.png")
