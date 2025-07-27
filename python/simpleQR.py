@@ -5,8 +5,8 @@ qr = qrcode.QRCode(
     box_size=10,
     border=4,
 )
-qr.add_data('https://rismaexpress.vercel.app')
+qr.add_data('Kabel Data Robot Type C')
 qr.make(fit=True)
 
 img = qr.make_image(fill_color="black", back_color="white")
-img.save('rismaexpress.png')
+img.save('rahmancell/kabel-data-robot-type-C.png')
